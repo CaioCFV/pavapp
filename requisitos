@@ -1,0 +1,10 @@
+1.  cadastro de produtos
+2.  cadastro de variações
+3.  cadastro de estoque
+4.  cadastro de preço
+5.  cadastro de clientes
+6.  registro de vendas
+7.  produto deve ter nome, id, e descrição
+8.  variações devem ter nome e EAN
+9.  nas vendas devem constar os produtos vendidos, o total e o nome do cliente.
+10. cliente deve ter nome e cpf

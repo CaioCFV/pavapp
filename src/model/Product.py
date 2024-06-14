@@ -7,6 +7,6 @@ class Product(db.Model):
     __tablename__ = "product"
 
     # Columns
-    id = Column("id",Integer,primary_key=True)
-    name = Column("name", String(150), nullable=False)
+    id          = Column("id",Integer,primary_key=True)
+    name        = Column("name", String(150), nullable=False)
     description = Column("description", String(1000), nullable=False)

@@ -1,6 +1,6 @@
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError, OperationalError
-from src.service.VariantService import add
+from src.service.VariantService import add, lister
 from flask import Flask, request
 
 
@@ -17,6 +17,17 @@ class Variant(Resource):
                 'price': variant.price,
                 'product_id': variant.product_id
                 }, 201
+
+        except (OperationalError, IntegrityError):
+            abort(500, message="Internal Server Error")
+        
+    def get(self):
+        try:            
+            response = lister()
+            variants = []
+            for variant in response:
+                variants.append(variant.toDict())
+            return variants, 200
 
         except (OperationalError, IntegrityError):
             abort(500, message="Internal Server Error")

@@ -1,5 +1,5 @@
 from src.model.Variant import Variant
-from src.repositories.VariantRepository import add_variant
+from src.repositories.VariantRepository import add_variant, list_variant
 
 def add(name: str, ean: str, quantity: int, price: int, product_id: int) -> Variant:
     if( name is None or name == '' 

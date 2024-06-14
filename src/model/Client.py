@@ -2,6 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy import Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from src.model.dbmodel import db
+from sqlalchemy import inspect
 
 class Client(db.Model):
     __tablename__ = "client"
@@ -10,8 +11,7 @@ class Client(db.Model):
     name = db.Column("name", String(150), nullable=False)
     cpf  = db.Column("cpf", String(150), nullable=False)
 
-    def __init__(self, name, cpf):
-        self.name = name
-        self.cpf = cpf
+    def toDict(self):
+       return { c.key: getattr(self, c.key) for c in inspect(self).mapper.column_attrs }
 
 

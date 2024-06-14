@@ -1,11 +1,6 @@
-from sqlalchemy.orm import declarative_base
-from sqlalchemy import create_engine
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-
-Base = declarative_base()
-db = SQLAlchemy()
+from .Base import Base
 
 class Endereco(Base):
     __tablename__ = "endereco"

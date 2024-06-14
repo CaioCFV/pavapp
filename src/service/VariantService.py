@@ -11,3 +11,7 @@ def add(name: str, ean: str, quantity: int, price: int, product_id: int) -> Vari
         raise Exception
 
     return add_variant(name, ean, quantity, price, product_id)
+
+def lister() -> Variant:
+    return list_variant()
+

@@ -7,3 +7,7 @@ def add_product(name: str, description: str) -> Product:
     db.session.commit()
 
     return product
+
+def list_product() -> sqlalchemy.orm.query.Query:
+    products = db.session.query(Product).all()
+    return products

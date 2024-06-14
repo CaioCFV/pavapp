@@ -7,3 +7,7 @@ def add_variant(name: str, ean: str, quantity: int, price: int, product_id: int)
     db.session.commit()
 
     return variant
+
+def list_variants() -> sqlalchemy.orm.query.Query:
+    variants = db.session.query(Variant).all()
+    return variants

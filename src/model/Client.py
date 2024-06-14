@@ -1,14 +1,9 @@
-from sqlalchemy.orm import declarative_base
 from sqlalchemy import create_engine
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from src.model.Endereco import Endereco
+from src.model.dbmodel import db
 
-Base = declarative_base()
-db = SQLAlchemy()
-
-class Client(Base):
+class Client(db.Model):
     __tablename__ = "client"
 
     # Columns
@@ -31,3 +26,4 @@ class Client(Base):
     # idfuncionario = Column(Integer, ForeignKey("funcionario.id"), nullable=False)
 
     # funcionario = relationship("Funcionario", back_populates="funcionario_endereco")
+
